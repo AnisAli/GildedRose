@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GildedRose.API.ViewModels
+namespace GildedRose.Common.ViewModels
 {
-    public class ProductsList
+    public class ProductsPagedList
     {
         public int TotalProducts { get; set; } 
-        public IList<Product> Products { get; set; }
+        public IEnumerable<Product> Products { get; set; }
 
     }
 }
