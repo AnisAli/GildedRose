@@ -9,6 +9,6 @@ namespace GildedRose.Services.Contracts
 {
     public interface IProductService
     {
-        Task<ProductsPagedList> GetProductList(int PageSize, int PageNo, string Filter);
+        Task<ProductsPagedList> GetProductList(int PageSize, int PageNo, string Filter, CancellationToken cancalletiontToken);
     }
 }

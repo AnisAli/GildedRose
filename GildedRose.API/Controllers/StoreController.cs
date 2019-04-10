@@ -24,21 +24,21 @@ namespace GildedRose.Controllers
         [HttpGet("products")]
         public async Task<ActionResult<ProductsPagedList>> GetProducts([FromQuery] QueryParams request, CancellationToken cancellationToken)
         {
-            return await productService.GetProductList(1, 2, "a") ;
+            return await productService.GetProductList(1, 2, "a", cancellationToken) ;
         }
 
         // GET api/v1/store/products/{id}
         [HttpGet("product/{id}")]
-        public async Task<ActionResult<Product>> GetProductById(int id, CancellationToken cancellationToken)
+        public async Task<ActionResult<ProductVM>> GetProductById(int id, CancellationToken cancellationToken)
         {
-            return new Product();
+            return new ProductVM();
         }
 
         // POST api/v1/store/checkout
         [HttpPost("checkout")]
-        public async Task<ActionResult<Product>> Checkout(int id, CancellationToken cancellationToken)
+        public async Task<ActionResult<ProductVM>> Checkout(int id, CancellationToken cancellationToken)
         {
-            return new Product();
+            return new ProductVM();
         }
 
     }

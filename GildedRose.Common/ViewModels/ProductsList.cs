@@ -8,7 +8,7 @@ namespace GildedRose.Common.ViewModels
     public class ProductsPagedList
     {
         public int TotalProducts { get; set; } 
-        public IEnumerable<Product> Products { get; set; }
+        public IEnumerable<ProductVM> Products { get; set; }
 
     }
 }
