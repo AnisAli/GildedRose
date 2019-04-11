@@ -5,11 +5,7 @@ VisualStudioVersion = 15.0.28307.438
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GildedRose.API", "GildedRose.API\GildedRose.API.csproj", "{388BEF70-BFD3-43A2-B7F1-330092E2B04F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GildedRose.Services", "GildedRose.Services\GildedRose.Services.csproj", "{BE434507-EDAA-49A1-A34B-44C75378F24E}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GildedRose.Common", "GildedRose.Common\GildedRose.Common.csproj", "{51DC177D-53E4-4F6F-B93D-40B94BC54782}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GildedRose.Data", "GildedRose.Data\GildedRose.Data.csproj", "{C083E851-94EE-4949-AA6D-B662C390698F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GildedRose.Data", "GildedRose.Data\GildedRose.Data.csproj", "{C083E851-94EE-4949-AA6D-B662C390698F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GildedRose.Tests", "GildedRose.Tests\GildedRose.Tests.csproj", "{6300523C-0779-4E3B-B04A-B0EE2FC1D3E3}"
 EndProject
@@ -23,14 +19,6 @@ Global
 		{388BEF70-BFD3-43A2-B7F1-330092E2B04F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{388BEF70-BFD3-43A2-B7F1-330092E2B04F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{388BEF70-BFD3-43A2-B7F1-330092E2B04F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BE434507-EDAA-49A1-A34B-44C75378F24E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BE434507-EDAA-49A1-A34B-44C75378F24E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BE434507-EDAA-49A1-A34B-44C75378F24E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BE434507-EDAA-49A1-A34B-44C75378F24E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{51DC177D-53E4-4F6F-B93D-40B94BC54782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51DC177D-53E4-4F6F-B93D-40B94BC54782}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{51DC177D-53E4-4F6F-B93D-40B94BC54782}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51DC177D-53E4-4F6F-B93D-40B94BC54782}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C083E851-94EE-4949-AA6D-B662C390698F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C083E851-94EE-4949-AA6D-B662C390698F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C083E851-94EE-4949-AA6D-B662C390698F}.Release|Any CPU.ActiveCfg = Release|Any CPU

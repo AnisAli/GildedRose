@@ -10,6 +10,6 @@ namespace GildedRose.Data
         {
         }
 
-        public DbSet<Product> Products { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
     }
 }

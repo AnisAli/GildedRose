@@ -6,15 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="2.3.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GildedRose.Common\GildedRose.Common.csproj" />
     <ProjectReference Include="..\GildedRose.Data\GildedRose.Data.csproj" />
-    <ProjectReference Include="..\GildedRose.Services\GildedRose.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Helper\Exceptions\" />
   </ItemGroup>
 
 </Project>

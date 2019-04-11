@@ -4,7 +4,9 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Xunit;
 using GildedRose;
-using GildedRose.Common.ViewModels;
+using GildedRose.ViewModels;
+using System;
+using FluentAssertions;
 
 namespace GildedRose.Tests.Api.IntegrationTests.Controllers
 {
@@ -32,6 +34,20 @@ namespace GildedRose.Tests.Api.IntegrationTests.Controllers
             Assert.Equal(2, productList.TotalProducts);
         }
 
+        [Fact]
+        public async Task CanGetProducts_WithInvalidPageSize()
+        {
+            // The endpointof the controller action.
+            var pageSize = -10;
+            var url = $"/api/v1/store/products?pageSize={pageSize}";
+            var httpResponse = await _client.GetAsync(url);
+            //act
+            Action act = () => httpResponse.EnsureSuccessStatusCode();
 
+            // assert
+            var stringResponse = await httpResponse.Content.ReadAsStringAsync();
+             stringResponse.Should().Contain("PageSize cannot be negative");
+             act.Should().Throw<HttpRequestException>();
+        }
     }
 }

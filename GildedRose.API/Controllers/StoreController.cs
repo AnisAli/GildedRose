@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using GildedRose.Common.ViewModels;
+using GildedRose.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using GildedRose.Services.Contracts;
-
+using GildedRose.Api.Services.Contracts;
+using GildedRose.API.Helper.Attributes;
 namespace GildedRose.Controllers
 {
     [ApiVersion("1.0")]
@@ -22,6 +22,7 @@ namespace GildedRose.Controllers
         }
         // GET api/v1/store/products
         [HttpGet("products")]
+        [ValidateModel]
         public async Task<ActionResult<ProductsPagedList>> GetProducts([FromQuery] QueryParams request, CancellationToken cancellationToken)
         {
             return await productService.GetProductList(1, 2, "a", cancellationToken) ;

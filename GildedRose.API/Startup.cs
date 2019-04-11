@@ -1,4 +1,6 @@
-﻿using GildedRose.API.Configurations;
+﻿using FluentValidation.AspNetCore;
+using GildedRose.API.Configurations;
+using GildedRose.API.Middlewares.GlobalErrorHandling.Extenstions;
 using GildedRose.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,7 +27,9 @@ namespace GildedRose
            services.ConfigureServices();
            services.AddDbContext<ApplicationDbContext>(opt =>
                 opt.UseInMemoryDatabase("GildedRoseDB"));
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+           services.AddMvc().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
+
+           services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
            services.AddApiVersioning(options => options.ReportApiVersions = true);
           
         }
@@ -37,7 +41,7 @@ namespace GildedRose
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.ConfigureExceptionHandler();
             app.UseMvc();
         }
     }
