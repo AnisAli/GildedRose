@@ -11,5 +11,7 @@ namespace GildedRose.Data
         }
 
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<ApplicationUser> Users { get; set; }
+        public virtual DbSet<ApplicationRole> Roles { get; set; }
     }
 }

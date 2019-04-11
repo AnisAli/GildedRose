@@ -8,7 +8,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using System;
+using GildedRose.Data.Models;
+using GildedRose.API.AuthenticationProvider;
 
 namespace GildedRose
 {
@@ -21,27 +28,33 @@ namespace GildedRose
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+
         public void ConfigureServices(IServiceCollection services)
         {
            services.ConfigureServices();
+
            services.AddDbContext<ApplicationDbContext>(opt =>
                 opt.UseInMemoryDatabase("GildedRoseDB"));
+
            services.AddMvc().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
 
            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+       
            services.AddApiVersioning(options => options.ReportApiVersions = true);
-          
+
+           services.ConfigureAuthentication(Configuration);
+
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        // Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ApplicationDbContext dbContext)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
             app.ConfigureExceptionHandler();
+            app.UseAuthentication();
             app.UseMvc();
         }
     }
