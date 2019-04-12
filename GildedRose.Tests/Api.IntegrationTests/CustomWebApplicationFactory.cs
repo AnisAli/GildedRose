@@ -1,17 +1,25 @@
 ﻿using GildedRose.Data;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using GildedRose.Api.Services.Contracts;
+using GildedRose.Api.Services.Implementation;
+
 using System;
+using System.Net.Http;
 
 namespace GildedRose.Tests.Api.IntegrationTests
 {
     public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<Startup>
     {
+        
         protected override void ConfigureWebHost(IWebHostBuilder builder)
         {
+            builder.UseEnvironment("Test").UseStartup<Startup>();
+
             builder.ConfigureServices(services =>
             {
                 // Create a new service provider.
@@ -26,7 +34,10 @@ namespace GildedRose.Tests.Api.IntegrationTests
                     options.UseInternalServiceProvider(serviceProvider);
                 });
 
+                services.AddScoped<IProductService, ProductService>();
+
                 var sp = services.BuildServiceProvider();
+               
         
                 using (var scope = sp.CreateScope())
                 {

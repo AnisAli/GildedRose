@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GildedRose.ViewModels
 {
-    public class ProductsPagedList
+    public class ProductsPagedListVM
     {
         public int TotalProducts { get; set; } 
         public IEnumerable<ProductVM> Products { get; set; }

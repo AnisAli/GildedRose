@@ -16,33 +16,35 @@ using System.Text;
 using System;
 using GildedRose.Data.Models;
 using GildedRose.API.AuthenticationProvider;
-
 namespace GildedRose
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment envirnoment)
         {
             Configuration = configuration;
+            env = envirnoment;
         }
 
         public IConfiguration Configuration { get; }
+        public IHostingEnvironment env { get; }
 
 
         public void ConfigureServices(IServiceCollection services)
         {
            services.ConfigureServices();
+           services.ConfigureApplicationCookie(options => options.LoginPath = "/api/v1/auth");
 
-           services.AddDbContext<ApplicationDbContext>(opt =>
+            services.AddDbContext<ApplicationDbContext>(opt =>
                 opt.UseInMemoryDatabase("GildedRoseDB"));
-
-           services.AddMvc().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
 
            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
        
            services.AddApiVersioning(options => options.ReportApiVersions = true);
-
-           services.ConfigureAuthentication(Configuration);
+         //   if (!env.IsEnvironment("Test"))
+         //   {
+                services.ConfigureAuthentication(Configuration,env);
+         //   }
 
         }
 
@@ -53,8 +55,14 @@ namespace GildedRose
             {
                 app.UseDeveloperExceptionPage();
             }
+         
             app.ConfigureExceptionHandler();
-            app.UseAuthentication();
+
+            if (!env.IsEnvironment("Test"))
+            {
+                app.UseAuthentication();
+            }
+
             app.UseMvc();
         }
     }

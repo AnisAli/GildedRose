@@ -8,11 +8,10 @@ namespace GildedRose.API.Middlewares.GlobalErrorHandling
 {
     public class ErrorDetails
     {
-        public string ErrorCode { get; set; }
+        public int ErrorCode { get; set; }
 
         public string Message { get; set; }
 
-        public string StackTrace { get; set; }
 
         public override string ToString()
         {

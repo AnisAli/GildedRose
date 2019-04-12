@@ -1,42 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Net.Http;
+using System.Net;
+
 
 namespace GildedRose.API.Middlewares.GlobalErrorHandling
 {
     public static class ExceptionStatusCodeMapper
     {
 
-        public const int Status401UnauthorizedError         = 401;
-        public const int Status401UnauthorizedAccessError   = 403;
-        public const int Status500InternalError             = 500;
-        public const int Status400BadRequestError           = 400;
-        public const int Status404NotFoundError             = 404;
-
         public static int GetStatusCode(this Exception ex)
         {
 
             if (ex is UnauthorizedAccessException)
             {
-                return Status401UnauthorizedAccessError;
+                return (int)HttpStatusCode.Unauthorized;
             }
             else if (ex is InvalidOperationException || ex is BadRequestException)
             {
-                return Status400BadRequestError;
+                return (int)HttpStatusCode.BadRequest;
             }
-            else if (ex is InvalidUserException)
+            else if (ex is OutOfStockException)
             {
-                return Status401UnauthorizedError;
+                return (int) HttpStatusCode.Gone;
             }
             else if (ex is NotFoundException)
             {
-                return Status404NotFoundError;
+                return (int)HttpStatusCode.NotFound;
             }
             else
             {
-                return Status500InternalError;
+                return (int)HttpStatusCode.InternalServerError;
             }
 
         }

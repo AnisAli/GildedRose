@@ -16,8 +16,4 @@
     <ProjectReference Include="..\GildedRose.Data\GildedRose.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Helper\Exceptions\" />
-  </ItemGroup>
-
 </Project>

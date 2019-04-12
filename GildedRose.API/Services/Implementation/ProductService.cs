@@ -1,6 +1,6 @@
 ﻿using GildedRose.ViewModels;
 using GildedRose.Api.Services.Contracts;
-using System;
+using GildedRose.API;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using GildedRose.Data;
 using GildedRose.Data.Models;
 using System.Threading;
+using GildedRose.API.ViewModels;
+using System;
 
 namespace GildedRose.Api.Services.Implementation
 {
@@ -22,12 +24,60 @@ namespace GildedRose.Api.Services.Implementation
             _context = context;
         }
 
-        public async Task<ProductsPagedList> GetProductList(int PageSize, int PageNo, string Filter, CancellationToken cancalletiontToken)
+        public async Task<ProductsPagedListVM> GetProductListAsync(CancellationToken cancalletiontToken,int pageSize, int pageNo, string searchText)
         {
-            var products = await _context.Products.ToListAsync(cancalletiontToken);
-            return new ProductsPagedList() { Products = ConvertProductVM(products), TotalProducts = products.Count };
+
+            cancalletiontToken.ThrowIfCancellationRequested();
+            searchText = searchText?.ToLower().Trim() ?? string.Empty;
+            pageSize = pageSize <= 0 ? 1000 : pageSize;
+            pageNo = pageNo <= 0 ? 1 : pageNo;
+            var emptySearchCriteria = string.IsNullOrWhiteSpace(searchText);
+
+            var products = await _context.Products.Where(c=> emptySearchCriteria || c.Name.ToLower().Contains(searchText))
+                                    .OrderBy(c=>c.Id)
+                                    .Skip((pageNo - 1) * pageSize)
+                                    .Take(pageSize)
+                                    .ToListAsync(cancalletiontToken);
+
+            return new ProductsPagedListVM() { Products = ConvertProductVM(products), TotalProducts = products.Count };
         }
 
+        public async Task<OrderVM> CheckoutAsync(CancellationToken cancalletiontToken, OrderItem orderItem)
+        {
+            cancalletiontToken.ThrowIfCancellationRequested();
+
+            var product = await _context.Products.Where(c => c.Id == orderItem.ProductId).SingleOrDefaultAsync(cancalletiontToken);
+
+           if (product == null)
+           {
+                throw new NotFoundException("Product Not Found!");
+           }
+
+           if (product.QuantityInHand < orderItem.Quantity)
+           {
+                throw new OutOfStockException(product.Id);
+           }
+
+            product.QuantityInHand -= orderItem.Quantity;
+            _context.SaveChanges();
+
+            return new OrderVM
+            {
+                OrderId = System.Guid.NewGuid(),
+                TimeStamp = DateTime.UtcNow,
+                Product = new ProductVM()
+                            {
+                                Name = product.Name,
+                                ProductId = product.Id,
+                                Description = product.Description,
+                                Price = product.Price
+                            }
+            };
+
+        }
+        
+
+        //we can use automapper to map ORM to VM
         private IList<ProductVM> ConvertProductVM(IList<Product> products)
         {
             var list = new List<ProductVM>();

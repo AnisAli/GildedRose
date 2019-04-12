@@ -8,13 +8,11 @@ namespace GildedRose.API.Middlewares.GlobalErrorHandling.Extenstions
     {
         public static void ConfigureExceptionHandler(this IApplicationBuilder app)
         {
-
-          
+       
             app.UseExceptionHandler(appError =>
             {
                 appError.Run(async context =>
                 {
-
                     context.Response.ContentType = "application/json";
                     var contextFeature = context.Features.Get<IExceptionHandlerFeature>();
                     context.Response.StatusCode = contextFeature.Error.GetStatusCode();
@@ -23,9 +21,8 @@ namespace GildedRose.API.Middlewares.GlobalErrorHandling.Extenstions
                     {
                         await context.Response.WriteAsync(new ErrorDetails()
                         {
-                            ErrorCode = contextFeature.Error.GetStatusCode().ToString(),//context.Response.StatusCode.ToString(),
-                            Message = contextFeature.Error.Message.Trim(),   
-                            StackTrace = contextFeature.Error.StackTrace.Trim(),
+                            ErrorCode = contextFeature.Error.GetStatusCode(),
+                            Message = contextFeature.Error.Message.Trim(), 
                         }.ToString());
                     }
                 });

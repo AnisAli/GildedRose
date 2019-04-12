@@ -10,7 +10,7 @@ using System.Collections.Generic;
 namespace GildedRose.API.AuthenticationProvider
 {
     public class UserStore : IUserStore<ApplicationUser>, IUserEmailStore<ApplicationUser>, IUserPhoneNumberStore<ApplicationUser>,
-        IUserTwoFactorStore<ApplicationUser>, IUserPasswordStore<ApplicationUser>, IUserRoleStore<ApplicationUser>
+        IUserTwoFactorStore<ApplicationUser>, IUserPasswordStore<ApplicationUser>, IUserRoleStore<ApplicationUser> 
     {
         readonly ApplicationDbContext _dbcontext;
 
@@ -23,6 +23,7 @@ namespace GildedRose.API.AuthenticationProvider
         {
             throw new System.NotImplementedException();
         }
+
 
         public async Task<IdentityResult> CreateAsync(ApplicationUser user, CancellationToken cancellationToken)
         {
@@ -48,8 +49,7 @@ namespace GildedRose.API.AuthenticationProvider
 
         public async Task<ApplicationUser> FindByNameAsync(string normalizedUserName, CancellationToken cancellationToken)
         {
-            cancellationToken.ThrowIfCancellationRequested();
-            return null;
+            return this._dbcontext.Users.Where(c => c.UserName == normalizedUserName).FirstOrDefault();
         }
 
         public Task<string> GetNormalizedUserNameAsync(ApplicationUser user, CancellationToken cancellationToken)

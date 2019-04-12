@@ -5,18 +5,18 @@ using System.Threading.Tasks;
 
 namespace GildedRose.API
 {
-    public class InvalidUserException : Exception
+    public class OutOfStockException : Exception
     {
-        public InvalidUserException()
+        public OutOfStockException(int productId) : base($"Product: {productId} is out of stock.")
         {
         }
 
-        public InvalidUserException(string message)
+        public OutOfStockException(string message)
             : base(message)
         {
         }
 
-        public InvalidUserException(string message, Exception inner)
+        public OutOfStockException(string message, Exception inner)
             : base(message, inner)
         {
         }

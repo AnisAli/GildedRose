@@ -24,14 +24,16 @@ namespace GildedRose.API.Helper
                     new Data.Models.Product
                     {
                         Id = 1,
-                        Name = "Pepsi",
-                        Description = "Cola"
+                        Name = "Blue Bags",
+                        Description = "Fancy Blue Bags",
+                        QuantityInHand = 3
                     },
                      new Data.Models.Product
                      {
                          Id = 2,
-                         Name = "Pepsi2",
-                         Description = "Cola2"
+                         Name = "Green T-Shirt",
+                         Description = "Fancy Green T-Shirt",
+                         QuantityInHand = 5
                      }
                    );
 
