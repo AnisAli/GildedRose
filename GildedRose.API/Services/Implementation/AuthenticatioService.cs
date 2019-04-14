@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
-using GildedRose.Api.Services.Contracts;
+using GildedRose.API.Services.Contracts;
 
-namespace GildedRose.Api.Services.Implementation
+namespace GildedRose.API.Services.Implementation
 {
     public class AuthenticationService : IAuthenticationService
     {

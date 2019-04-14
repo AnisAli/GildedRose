@@ -1,6 +1,6 @@
 ﻿using FluentAssertions;
-using GildedRose.Api.Services.Contracts;
-using GildedRose.Api.Services.Implementation;
+using GildedRose.API.Services.Contracts;
+using GildedRose.API.Services.Implementation;
 using GildedRose.Controllers;
 using GildedRose.ViewModels;
 using GildedRose.Data;
@@ -29,7 +29,7 @@ namespace GildedRose.Tests.UnitTests
         }
 
         [Fact]
-        public async Task GetProductsAsync()
+        public async Task GetAllProductsAsync()
         {
             productService.Setup(s => s.GetProductListAsync(It.IsAny<CancellationToken>(), It.IsAny<int>(), It.IsAny<int>(), It.IsAny<string>()))
            .Returns(Task.FromResult(

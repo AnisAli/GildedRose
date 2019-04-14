@@ -1,5 +1,5 @@
 ﻿using GildedRose.ViewModels;
-using GildedRose.Api.Services.Contracts;
+using GildedRose.API.Services.Contracts;
 using GildedRose.API;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +12,7 @@ using System.Threading;
 using GildedRose.API.ViewModels;
 using System;
 
-namespace GildedRose.Api.Services.Implementation
+namespace GildedRose.API.Services.Implementation
 {
     public class ProductService : IProductService
     {
@@ -77,7 +77,7 @@ namespace GildedRose.Api.Services.Implementation
         }
         
 
-        //we can use automapper to map ORM to VM
+        //we can use automapper to map ORM Object to VM
         private IList<ProductVM> ConvertProductVM(IList<Product> products)
         {
             var list = new List<ProductVM>();

@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using GildedRose.API.ViewModels;
 
-namespace GildedRose.Api.Services.Contracts
+namespace GildedRose.API.Services.Contracts
 {
     public interface IProductService
     {

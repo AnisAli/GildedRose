@@ -3,8 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using GildedRose.Api.Services.Implementation;
-using GildedRose.Api.Services.Contracts;
+using GildedRose.API.Services.Implementation;
+using GildedRose.API.Services.Contracts;
 
 namespace GildedRose.API.Configurations
 {

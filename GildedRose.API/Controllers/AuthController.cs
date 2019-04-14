@@ -5,7 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using GildedRose.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using GildedRose.Api.Services.Contracts;
+using GildedRose.API.Services.Contracts;
 using GildedRose.API.Helper.Attributes;
 using Microsoft.AspNetCore.Identity;
 using GildedRose.Data.Models;

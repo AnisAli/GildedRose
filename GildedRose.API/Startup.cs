@@ -27,13 +27,12 @@ namespace GildedRose
         }
 
         public IConfiguration Configuration { get; }
-        public IHostingEnvironment env { get; }
 
+        public IHostingEnvironment env { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
            services.ConfigureServices();
-           services.ConfigureApplicationCookie(options => options.LoginPath = "/api/v1/auth");
 
             services.AddDbContext<ApplicationDbContext>(opt =>
                 opt.UseInMemoryDatabase("GildedRoseDB"));
@@ -41,11 +40,7 @@ namespace GildedRose
            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
        
            services.AddApiVersioning(options => options.ReportApiVersions = true);
-         //   if (!env.IsEnvironment("Test"))
-         //   {
-                services.ConfigureAuthentication(Configuration,env);
-         //   }
-
+           services.ConfigureAuthentication(Configuration);
         }
 
         // Use this method to configure the HTTP request pipeline.
@@ -57,13 +52,9 @@ namespace GildedRose
             }
          
             app.ConfigureExceptionHandler();
-
-            if (!env.IsEnvironment("Test"))
-            {
-                app.UseAuthentication();
-            }
-
+            app.UseAuthentication();
             app.UseMvc();
         }
+
     }
 }

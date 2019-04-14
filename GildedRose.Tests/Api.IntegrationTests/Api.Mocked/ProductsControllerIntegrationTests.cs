@@ -20,7 +20,7 @@ namespace GildedRose.Tests.Api.IntegrationTests.Controllers
         private readonly HttpClient _client;
         private readonly CustomWebApplicationFactory<Startup> _factory;
         public ProductsControllerIntegrationTests(CustomWebApplicationFactory<Startup> factory)
-        {
+        {        
             _factory = factory;
             _client = factory.CreateClient();
         }
@@ -128,104 +128,6 @@ namespace GildedRose.Tests.Api.IntegrationTests.Controllers
             var result = JsonConvert.DeserializeObject<ProductsPagedListVM>(stringResponse);
             result.Should().BeEquivalentTo(expected);
         }
-
-
-
-        [Fact]
-        public async Task CanGetProducts_WithInvalidPageSize()
-        {
-            // The endpointof the controller action.
-
-            var expected = new ProductsPagedListVM()
-            {
-                TotalProducts = 0,
-                Products = new List<ProductVM>()
-            };
-
-            var pageSize = -10;
-            var url = $"/api/v1/store/products?pageSize={pageSize}";
-            var httpResponse = await _client.GetAsync(url);
-
-            //act
-            Action act = () => httpResponse.EnsureSuccessStatusCode();
-
-            // assert
-            var stringResponse = await httpResponse.Content.ReadAsStringAsync();
-             stringResponse.Should().Contain("PageSize cannot be negative");
-             act.Should().Throw<HttpRequestException>();
-        }
-
-
-        private async Task<string> GetToken()
-        {
-          
-            var url = $"/api/v1/auth";
-            var httpResponse = await _client.GetAsync(url);
-
-            // Must be successful.
-            httpResponse.EnsureSuccessStatusCode();
-            // Deserialize and examine results.
-            var stringResponse = await httpResponse.Content.ReadAsStringAsync();
-            //var result = JsonConvert.DeserializeObject<string>(stringResponse);
-            return stringResponse;
-            //result.Should().BeEquivalentTo(expected);
-        }
-
-        [Fact]
-        public async Task CheckoutTest()
-        {
-            // The endpointof the controller action.
-
-            var body = new OrderItem()
-            {
-                ProductId = 2,
-                Quantity = 1
-            };
-
-            var expected = new OrderVM()
-            {
-                Product = new ProductVM() { ProductId = 2, Description = "product2", Name = "product2", Price = 2 }
-
-            };
-
-            
-
-            var token = await this.GetToken();
-            //_client.DefaultRequestHeaders.Add("authorization", "bearer " + token);
-            //_client.DefaultRequestHeaders.Add("Accept","text /html,application/xhtml+xml,application/json");// = "text/html,application/xhtml+xml,application/json";
-            ////_client.DefaultRequestHeaders.Authorization
-            ////           = new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme, token);
-            //var httpResponse = await _client.PostAsJsonAsync<OrderItem>(url, body);
-
-            //// Must be successful.
-            //httpResponse.EnsureSuccessStatusCode();
-
-            //// Deserialize and examine results.
-            //var stringResponse = await httpResponse.Content.ReadAsStringAsync();
-            //var result = JsonConvert.DeserializeObject<ProductsPagedListVM>(stringResponse);
-            //result.Should().BeEquivalentTo(expected);
-        
-            var url = $"/api/v1/store/checkout";
-            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme, token);
-            _client.DefaultRequestHeaders.Add("Accept", "application/vnd.host+json;version=1");
-
-        //    var requestUri = new Uri(url);
-            var response = _client.PostAsJsonAsync<OrderItem>(url, body).Result;
-
-            // if (response.StatusCode == HttpStatusCode.Unauthorized)
-            //  {
-            // Authorization header has been set, but the server reports that it is missing.
-            // It was probably stripped out due to a redirect.
-
-            var test = 10;
-
-
-
-
-
-        }
-
-
 
     }
 }
