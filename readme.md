@@ -60,9 +60,9 @@ Product list API returns the list of the inventory with optional parameters Page
 ```code
 curl -X GET  http://localhost:5000/api/v1/store/products
 or
-curl -X GET http://localhost:4444/api/v1/store/products?pagesize=10&pagenumber=1
+curl -X GET http://localhost:5000/api/v1/store/products?pagesize=10&pagenumber=1
 or
-http://localhost:4444/api/v1/store/products?pagesize=10&pagenumber=1&searchtext=blue
+http://localhost:5000/api/v1/store/products?pagesize=10&pagenumber=1&searchtext=blue
 ```
 
 **Response**
@@ -126,7 +126,7 @@ curl -X POST \
 ```
 
 # Tools used
- *  Dotnet Core 2.1 (OpenIddict)
+ *  Dotnet Core 2.1 (for Authentication OpenIddict)
  *  Docker 
  *  Git
  *  Fluent Assertion and Xunit in Testing 
@@ -144,10 +144,10 @@ I have added one auth controller which act as an Authorization provider endpoint
 ### EntityFramework
 I used InMemoryDBContext for data storage purchase instead of using just one List. This API will work with the actual database as well by just modifying the startup.cs file.
 
-## Data Format
+### Data Format
 JSON is a lightweight and versatile format. It is relatively easier to parse, serialize/deserialize by clients.
 
-## Testing
+### Testing
 I have a number of unit tests for services and controller, and also added the integration tests for testing endpoints by using Mocks and In-Memory database.
 
 
