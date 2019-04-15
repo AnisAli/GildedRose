@@ -12,7 +12,7 @@ Docker image found on https://hub.docker.com/r/anisnoorali/gildedrose-api
 
 Pull Image from Dockerhub
 ```sh
-docker push anisnoorali/gildedrose-api:latest
+docker pull anisnoorali/gildedrose-api:latest
 ```
 API running on port 5000 inside the container, spin the container using the following command
 ```sh
