@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using GildedRose.ViewModels;
+﻿using GildedRose.ViewModels;
 using System.Threading;
 using System.Threading.Tasks;
 using GildedRose.API.ViewModels;
@@ -10,9 +7,9 @@ namespace GildedRose.API.Services.Contracts
 {
     public interface IProductService
     {
-        Task<ProductsPagedListVM> GetProductListAsync(CancellationToken cancalletiontToken,int PageSize, int PageNo, string Filter);
+        Task<ProductsPagedListVM> GetProductListAsync(CancellationToken cancellationToken,int PageSize, int PageNo, string Filter);
 
-        Task<OrderVM> CheckoutAsync(CancellationToken cancalletiontToken,OrderItem orderItem);
+        Task<OrderVM> CheckoutAsync(CancellationToken cancellationToken,OrderItem orderItem);
 
     }
 }

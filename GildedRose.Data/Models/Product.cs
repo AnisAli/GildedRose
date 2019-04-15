@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GildedRose.Data.Models
+﻿namespace GildedRose.Data.Models
 {
     public class Product
     {

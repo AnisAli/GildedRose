@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using GildedRose.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,7 +12,6 @@ namespace GildedRose.API.Helper
         {
             using (var context = new ApplicationDbContext(serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
             {
-                // Look for any board games.
                 if (context.Products.Any())
                 {
                     return;   // Data was already seeded
@@ -26,15 +23,25 @@ namespace GildedRose.API.Helper
                         Id = 1,
                         Name = "Blue Bags",
                         Description = "Fancy Blue Bags",
-                        QuantityInHand = 3
+                        QuantityInHand = 3,
+                        Price= 12
                     },
                      new Data.Models.Product
                      {
                          Id = 2,
                          Name = "Green T-Shirt",
                          Description = "Fancy Green T-Shirt",
-                         QuantityInHand = 5
-                     }
+                         QuantityInHand = 5,
+                         Price = 100
+                     },
+                      new Data.Models.Product
+                      {
+                          Id = 3,
+                          Name = "Yellow Book",
+                          Description = "Yellow interestig Book",
+                          QuantityInHand = 10,
+                          Price = 56
+                      }
                    );
 
                 context.SaveChanges();

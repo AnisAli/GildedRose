@@ -1,11 +1,8 @@
 ﻿using FluentAssertions;
 using GildedRose.API.Services.Contracts;
-using GildedRose.API.Services.Implementation;
 using GildedRose.Controllers;
 using GildedRose.ViewModels;
-using GildedRose.Data;
 using Moq;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
@@ -19,7 +16,7 @@ namespace GildedRose.Tests.UnitTests
     {
 
         private Mock<IProductService> productService;
-        private StoreController controller;
+        private readonly StoreController controller;
 
 
         public StoreControllerTest()
@@ -31,33 +28,34 @@ namespace GildedRose.Tests.UnitTests
         [Fact]
         public async Task GetAllProductsAsync()
         {
-            productService.Setup(s => s.GetProductListAsync(It.IsAny<CancellationToken>(), It.IsAny<int>(), It.IsAny<int>(), It.IsAny<string>()))
+            productService.Setup(s => s.GetProductListAsync(It.IsAny<CancellationToken>(), It.IsAny<int>(),
+                    It.IsAny<int>(), It.IsAny<string>()))
            .Returns(Task.FromResult(
-                new ProductsPagedListVM()
+                new ProductsPagedListVM
                 {
                     TotalProducts = 3,
-                    Products = new List<ProductVM>()
+                    Products = new List<ProductVM>
                       {
-                          new ProductVM() { ProductId = 1, Description = "product1", Name = "product1", Price = 1},
-                          new ProductVM() { ProductId = 2, Description = "product2", Name = "product2", Price = 2},
-                          new ProductVM() { ProductId = 3, Description = "product3", Name = "product3", Price = 3}
+                          new ProductVM { ProductId = 1, Description = "product1", Name = "product1", Price = 1},
+                          new ProductVM { ProductId = 2, Description = "product2", Name = "product2", Price = 2},
+                          new ProductVM { ProductId = 3, Description = "product3", Name = "product3", Price = 3}
                       }
                 })
             );
 
-            var expected = new ProductsPagedListVM()
+            var expected = new ProductsPagedListVM
             {
                 TotalProducts = 3,
-                Products = new List<ProductVM>()
-              {
-                  new ProductVM() { ProductId = 1, Description = "product1", Name = "product1", Price = 1},
-                  new ProductVM() { ProductId = 2, Description = "product2", Name = "product2", Price = 2},
-                  new ProductVM() { ProductId = 3, Description = "product3", Name = "product3", Price = 3}
-              }
+                Products = new List<ProductVM>
+                {
+                  new ProductVM { ProductId = 1, Description = "product1", Name = "product1", Price = 1},
+                  new ProductVM { ProductId = 2, Description = "product2", Name = "product2", Price = 2},
+                  new ProductVM { ProductId = 3, Description = "product3", Name = "product3", Price = 3}
+                }
             };
 
 
-            var queryParam = new QueryParams()
+            var queryParam = new QueryParams
             {
                 PageNumber = 12,
                 PageSize = 1,
@@ -66,7 +64,6 @@ namespace GildedRose.Tests.UnitTests
 
             var result = await controller.GetProductsAsync(queryParam, new CancellationToken());
             result.Value.Should().BeEquivalentTo(expected);
-
         }
 
         [Fact]
@@ -86,7 +83,7 @@ namespace GildedRose.Tests.UnitTests
                     }
                 }));
 
-            var expected = new OrderVM()
+            var expected = new OrderVM
             {
                 OrderId = guid,
                 TimeStamp = timeStamp,

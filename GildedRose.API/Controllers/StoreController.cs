@@ -1,21 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using GildedRose.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using GildedRose.API.Services.Contracts;
-using GildedRose.API.Helper.Attributes;
-using Microsoft.AspNetCore.Identity;
-using GildedRose.Data.Models;
 using Microsoft.AspNetCore.Authorization;
-using System.Security.Claims;
-using System.IdentityModel.Tokens.Jwt;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.Extensions.Configuration;
-using System.Text;
 using GildedRose.API.ViewModels;
+using AspNet.Security.OAuth.Validation;
 
 namespace GildedRose.Controllers
 {
@@ -34,14 +24,15 @@ namespace GildedRose.Controllers
 
   
         [HttpGet("products")]
-        public async Task<ActionResult<ProductsPagedListVM>> GetProductsAsync([FromQuery] QueryParams request, CancellationToken cancellationToken)
+        public async Task<ActionResult<ProductsPagedListVM>> GetProductsAsync([FromQuery] QueryParams request,
+            CancellationToken cancellationToken)
         {
             return await productService.GetProductListAsync(cancellationToken,request.PageSize, request.PageNumber, request.SearchText);
         }
 
 
         [HttpPost("checkout")]
-        [Authorize]
+        [Authorize(AuthenticationSchemes = OAuthValidationDefaults.AuthenticationScheme)]
         public async Task<ActionResult<OrderVM>> CheckoutAsync([FromBody] OrderItem order, CancellationToken cancellationToken)
         {
            return await productService.CheckoutAsync(cancellationToken, order);

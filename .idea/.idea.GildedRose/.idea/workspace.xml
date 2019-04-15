@@ -1,0 +1,1056 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cfbd488b-b029-4ce7-b67c-05a0c621577d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/AuthenticationProvider/RoleStore.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/AuthenticationProvider/UserStore.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/Configurations/AuthenticationConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.API/Configurations/AuthenticationConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/Configurations/ServiceConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.API/Configurations/ServiceConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.API/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/Controllers/StoreController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.API/Controllers/StoreController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/GildedRose.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.API/GildedRose.API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/Helper/Attributes/ValidateModelAttribute.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/Helper/DataGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.API/Helper/DataGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/Helper/Exceptions/BadRequestException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.API/Helper/Exceptions/BadRequestException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/Helper/Exceptions/NotFoundException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.API/Helper/Exceptions/NotFoundException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/Helper/Exceptions/OutOfStockException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.API/Helper/Exceptions/OutOfStockException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/Middlewares/GlobalErrorHandling/ErrorDetails.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.API/Middlewares/GlobalErrorHandling/ErrorDetails.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/Middlewares/GlobalErrorHandling/Extenstions/ExceptionMiddlewareExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.API/Middlewares/GlobalErrorHandling/Extenstions/ExceptionMiddlewareExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/Middlewares/GlobalErrorHandling/Extenstions/ExceptionStatusCodeMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.API/Middlewares/GlobalErrorHandling/Extenstions/ExceptionStatusCodeMapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.API/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/Services/Contracts/IAuthenticationService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/Services/Contracts/IProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.API/Services/Contracts/IProductService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/Services/Implementation/AuthenticatioService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/Services/Implementation/ProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.API/Services/Implementation/ProductService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.API/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/ViewModels/OrderVM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.API/ViewModels/OrderVM.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/ViewModels/ProductVM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.API/ViewModels/ProductVM.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/ViewModels/ProductsListVM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.API/ViewModels/ProductsListVM.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.API/ViewModels/QueryParams.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.API/ViewModels/QueryParams.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.Common/GildedRose.Common.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.Common/ViewModels/ProductVM.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.Common/ViewModels/ProductsList.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.Common/ViewModels/QueryParams.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.Data/ApplicationContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.Data/ApplicationContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.Data/Models/ApplicationRole.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.Data/Models/ApplicationUser.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.Data/Models/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.Data/Models/Product.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.Services/Contracts/IProductService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.Services/GildedRose.Services.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.Services/Implementation/ProductService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/Api.Mocked/CustomWebApplicationFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/Api.Mocked/CustomWebApplicationFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/Api.Mocked/ProductsControllerIntegrationTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/Api.Mocked/ProductsControllerIntegrationTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/SeedData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/SeedData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/ServiceTests/ProductServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/ServiceTests/ProductServiceTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.Tests/UnitTests/StoreControllerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.Tests/UnitTests/StoreControllerTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GildedRose.sln" beforeDir="false" afterPath="$PROJECT_DIR$/GildedRose.sln" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-2115945826">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="Dockerfile" value="1" />
+          <entry key="cs" value="26" />
+          <entry key="csproj" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="C#" value="26" />
+          <entry key="Csproj" value="1" />
+          <entry key="Dockerfile" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="Dockerfile" value="43" />
+          <entry key="cs" value="15" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="C#" value="15" />
+          <entry key="Dockerfile" value="43" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GildedRose.API/Configurations/AuthenticationConfiguration.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
+              <folding>
+                <marker date="1555295915467" expanded="true" signature="6:89" ph="..." />
+                <marker date="1555295915467" expanded="true" signature="182:1839" ph="{...}" />
+                <marker date="1555295915467" expanded="true" signature="236:1837" ph="{...}" />
+                <marker date="1555295915467" expanded="true" signature="358:1830" ph="{...}" />
+                <marker date="1555295915467" expanded="true" signature="492:701" ph="{...}" />
+                <marker date="1555295915467" expanded="true" signature="791:1293" ph="{...}" />
+                <marker date="1555295915467" expanded="true" signature="1307:1602" ph="/* Register the OpenIddict validation handler. ... */" />
+                <marker date="1555295915467" expanded="true" signature="1686:1817" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GildedRose.API/Configurations/ServiceConfiguration.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="47" selection-start-column="47" selection-end-column="47" />
+              <folding>
+                <marker date="1555295728149" expanded="true" signature="6:134" ph="..." />
+                <marker date="1555295728149" expanded="true" signature="175:430" ph="{...}" />
+                <marker date="1555295728149" expanded="true" signature="222:428" ph="{...}" />
+                <marker date="1555295728149" expanded="true" signature="307:421" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GildedRose.API/ViewModels/AuthVM.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+              <folding>
+                <marker date="1555295693667" expanded="true" signature="31:165" ph="{...}" />
+                <marker date="1555295693667" expanded="true" signature="57:163" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GildedRose.API/Program.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
+              <folding>
+                <marker date="1555296022159" expanded="false" signature="6:163" ph="..." />
+                <marker date="1555296022159" expanded="true" signature="185:1112" ph="{...}" />
+                <marker date="1555296022159" expanded="true" signature="212:1110" ph="{...}" />
+                <marker date="1555296022159" expanded="true" signature="265:860" ph="{...}" />
+                <marker date="1555296022159" expanded="true" signature="477:825" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GildedRose.Data/ApplicationContext.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+              <folding>
+                <marker date="1555294728744" expanded="false" signature="6:66" ph="..." />
+                <marker date="1555294728744" expanded="true" signature="93:353" ph="{...}" />
+                <marker date="1555294728744" expanded="true" signature="145:351" ph="{...}" />
+                <marker date="1555294728744" expanded="true" signature="263:283" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GildedRose.Data/Models/Product.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
+              <folding>
+                <marker date="1555295693675" expanded="true" signature="32:289" ph="{...}" />
+                <marker date="1555295693675" expanded="true" signature="59:287" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GildedRose.Tests/UnitTests/StoreControllerTest.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-170">
+              <caret line="36" column="50" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
+              <folding>
+                <marker date="1555296006919" expanded="false" signature="6:282" ph="..." />
+                <marker date="1555296006919" expanded="true" signature="320:3417" ph="{...}" />
+                <marker date="1555296006919" expanded="true" signature="359:3415" ph="{...}" />
+                <marker date="1555296006919" expanded="true" signature="512:659" ph="{...}" />
+                <marker date="1555296006919" expanded="true" signature="723:2365" ph="{...}" />
+                <marker date="1555296006919" expanded="true" signature="993:1491" ph="{...}" />
+                <marker date="1555296006919" expanded="true" signature="1107:1473" ph="{...}" />
+                <marker date="1555296006919" expanded="true" signature="1572:2022" ph="{...}" />
+                <marker date="1555296006919" expanded="true" signature="1672:2008" ph="{...}" />
+                <marker date="1555296006919" expanded="true" signature="2083:2196" ph="{...}" />
+                <marker date="1555296006919" expanded="true" signature="2423:3409" ph="{...}" />
+                <marker date="1555296006919" expanded="true" signature="2703:2963" ph="{...}" />
+                <marker date="1555296006919" expanded="true" signature="2848:2945" ph="{...}" />
+                <marker date="1555296006919" expanded="true" signature="3019:3249" ph="{...}" />
+                <marker date="1555296006919" expanded="true" signature="3148:3235" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/SeedData.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+              <folding>
+                <marker date="1555296006899" expanded="false" signature="6:52" ph="..." />
+                <marker date="1555296006899" expanded="true" signature="101:692" ph="{...}" />
+                <marker date="1555296006899" expanded="true" signature="136:690" ph="{...}" />
+                <marker date="1555296006899" expanded="true" signature="218:684" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/ServiceTests/ProductServiceTest.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="584">
+              <caret line="175" column="60" selection-start-line="175" selection-start-column="60" selection-end-line="175" selection-end-column="60" />
+              <folding>
+                <marker date="1555296006908" expanded="false" signature="6:417" ph="..." />
+                <marker date="1555296006908" expanded="true" signature="479:5798" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="518:5794" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="691:1263" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="1325:2036" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="1399:1847" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="1499:1833" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="2240:2477" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="2340:2463" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="2763:3311" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="2879:3116" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="2979:3102" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="3403:3861" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="3513:3612" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="3918:4682" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="4074:4151" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="4205:4446" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="4263:4432" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="4757:5213" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="4820:4947" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="4965:5082" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="5114:5202" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="5287:5787" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="5352:5431" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="5449:5659" ph="{...}" />
+                <marker date="1555296006908" expanded="true" signature="5691:5777" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/Api.Mocked/ProductsControllerIntegrationTests.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+              <folding>
+                <marker date="1555296605359" expanded="true" signature="6:253" ph="..." />
+                <marker date="1555296605359" expanded="true" signature="314:7938" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="422:7936" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="658:764" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="827:1897" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="901:1343" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="995:1329" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="1522:1739" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="1972:2965" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="2106:2343" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="2206:2329" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="2590:2807" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="3051:4010" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="3167:3404" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="3267:3390" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="3635:3852" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="4103:4927" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="4222:4321" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="4552:4769" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="4985:6147" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="5045:5121" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="5175:5417" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="5233:5403" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="5777:5934" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="6216:6828" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="6325:6400" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="6541:6697" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="6729:6818" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="6889:7928" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="6979:7209" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="7356:7517" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="7534:7822" ph="{...}" />
+                <marker date="1555296605359" expanded="true" signature="7852:7918" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/GildedRose.API/Middlewares/GlobalErrorHandling/Extenstions/ExceptionMiddlewareExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/680D0A75-2A4E-40EB-A596-BAD88FBFB729/f8/64b01fcb/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GildedRose.Data/ApplicationContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GildedRose.API/Configurations/AuthenticationConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GildedRose.API/Configurations/ServiceConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GildedRose.API/Helper/Exceptions/BadRequestException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GildedRose.API/Controllers/StoreController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GildedRose.API/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GildedRose.API/Controllers/AuthController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GildedRose.API/Services/Implementation/ProductService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GildedRose.API/Services/Contracts/IProductService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/ServiceTests/ProductServiceTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/SeedData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/Api.Mocked/ProductsControllerIntegrationTests.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GildedRose.Tests/UnitTests/StoreControllerTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GildedRose.API/Helper/Exceptions/NotFoundException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GildedRose.API/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GildedRose.API/Helper/DataGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GildedRose.API/ViewModels/AuthVM.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GildedRose.API/Middlewares/GlobalErrorHandling/ErrorDetails.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GildedRose.API/Helper/Exceptions/OutOfStockException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GildedRose.API/Middlewares/GlobalErrorHandling/Extenstions/ExceptionStatusCodeMapper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GildedRose.Data/Models/Product.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/GildedRose.API/GildedRose.API.csproj" />
+        <option value="$PROJECT_DIR$/GildedRose.API/Startup.cs" />
+        <option value="$PROJECT_DIR$/GildedRose.API/Dockerfile" />
+        <option value="$PROJECT_DIR$/GildedRose.API/ViewModels/AuthVM.cs" />
+        <option value="$PROJECT_DIR$/GildedRose.API/Services/Contracts/IProductService.cs" />
+        <option value="$PROJECT_DIR$/GildedRose.API/Services/Implementation/ProductService.cs" />
+        <option value="$PROJECT_DIR$/GildedRose.API/Middlewares/GlobalErrorHandling/Extenstions/ExceptionStatusCodeMapper.cs" />
+        <option value="$PROJECT_DIR$/GildedRose.API/Helper/Exceptions/BadRequestException.cs" />
+        <option value="$PROJECT_DIR$/GildedRose.API/Helper/Exceptions/NotFoundException.cs" />
+        <option value="$PROJECT_DIR$/GildedRose.API/Helper/Exceptions/OutOfStockException.cs" />
+        <option value="$PROJECT_DIR$/GildedRose.API/Helper/DataGenerator.cs" />
+        <option value="$PROJECT_DIR$/GildedRose.API/Middlewares/GlobalErrorHandling/ErrorDetails.cs" />
+        <option value="$PROJECT_DIR$/GildedRose.API/Controllers/AuthController.cs" />
+        <option value="$PROJECT_DIR$/GildedRose.API/Controllers/StoreController.cs" />
+        <option value="$PROJECT_DIR$/GildedRose.API/Configurations/AuthenticationConfiguration.cs" />
+        <option value="$PROJECT_DIR$/GildedRose.API/Configurations/ServiceConfiguration.cs" />
+        <option value="$PROJECT_DIR$/GildedRose.API/Program.cs" />
+        <option value="$PROJECT_DIR$/GildedRose.Data/ApplicationContext.cs" />
+        <option value="$PROJECT_DIR$/GildedRose.Tests/UnitTests/StoreControllerTest.cs" />
+        <option value="$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/SeedData.cs" />
+        <option value="$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/ServiceTests/ProductServiceTest.cs" />
+        <option value="$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/Api.Mocked/ProductsControllerIntegrationTests.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="260" />
+    <option name="y" value="25" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="GildedRose" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="GildedRose" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="GildedRose.Data" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="GildedRose" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="GildedRose.Data" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Models" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="GildedRose" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="GildedRose.Tests" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="GildedRose" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="GildedRose.Tests" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Api.IntegrationTests" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="GildedRose" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="GildedRose.Tests" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Api.IntegrationTests" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Api.Mocked" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="GildedRose" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="GildedRose.Tests" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Api.IntegrationTests" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="ServiceTests" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="GildedRose" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="GildedRose.Tests" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="UnitTests" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-all-files" value="false" />
+      </pane>
+      <pane id="FileSystemExplorer" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected=".NET Project.Default">
+    <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue=".NET Project.Default" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cfbd488b-b029-4ce7-b67c-05a0c621577d" name="Default Changelist" comment="" />
+      <created>1555293930542</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1555293930542</updated>
+      <workItem from="1555293933332" duration="2562000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2562000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="NuGet" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Unit Tests" visible="true" weight="0.32939914" />
+      <window_info anchor="bottom" id="REST Client" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Build" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Errors In Solution" />
+      <window_info anchor="right" id="Unit Tests Coverage" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/GildedRose.API/Startup.cs</url>
+          <line>28</line>
+          <properties documentPath="$PROJECT_DIR$/GildedRose.API/Startup.cs" initialLine="32">
+            <startOffsets>
+              <option value="836" />
+            </startOffsets>
+            <endOffsets>
+              <option value="912" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/GildedRose.API/Services/Implementation/ProductService.cs</url>
+          <line>18</line>
+          <properties documentPath="$PROJECT_DIR$/GildedRose.API/Services/Implementation/ProductService.cs" initialLine="23">
+            <startOffsets>
+              <option value="542" />
+            </startOffsets>
+            <endOffsets>
+              <option value="561" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/GildedRose.API/Controllers/StoreController.cs</url>
+          <line>29</line>
+          <properties documentPath="$PROJECT_DIR$/GildedRose.API/Controllers/StoreController.cs" initialLine="29">
+            <startOffsets>
+              <option value="868" />
+            </startOffsets>
+            <endOffsets>
+              <option value="992" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/GildedRose.API/Configurations/AuthenticationConfiguration.cs</url>
+          <line>18</line>
+          <properties documentPath="$PROJECT_DIR$/GildedRose.API/Configurations/AuthenticationConfiguration.cs" initialLine="16">
+            <startOffsets>
+              <option value="597" />
+            </startOffsets>
+            <endOffsets>
+              <option value="687" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/GildedRose.Tests/UnitTests/StoreControllerTest.cs</url>
+          <line>45</line>
+          <properties documentPath="$PROJECT_DIR$/GildedRose.Tests/UnitTests/StoreControllerTest.cs" initialLine="45">
+            <startOffsets>
+              <option value="1521" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2023" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/GildedRose.Tests/UnitTests/StoreControllerTest.cs</url>
+          <line>71</line>
+          <properties documentPath="$PROJECT_DIR$/GildedRose.Tests/UnitTests/StoreControllerTest.cs" initialLine="71">
+            <startOffsets>
+              <option value="2446" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2479" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/ServiceTests/ProductServiceTest.cs</url>
+          <line>65</line>
+          <properties documentPath="$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/ServiceTests/ProductServiceTest.cs" initialLine="65">
+            <startOffsets>
+              <option value="2131" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2146" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/Api.Mocked/ProductsControllerIntegrationTests.cs</url>
+          <line>159</line>
+          <properties documentPath="$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/Api.Mocked/ProductsControllerIntegrationTests.cs" initialLine="159">
+            <startOffsets>
+              <option value="5481" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5485" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/GildedRose.API/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="635">
+          <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+          <folding>
+            <marker date="1555295693671" expanded="true" signature="0:356" ph="..." />
+            <marker date="1555295693671" expanded="true" signature="378:1517" ph="{...}" />
+            <marker date="1555295693671" expanded="true" signature="405:1515" ph="{...}" />
+            <marker date="1555295693671" expanded="true" signature="464:527" ph="{...}" />
+            <marker date="1555295693671" expanded="true" signature="649:1074" ph="{...}" />
+            <marker date="1555295693671" expanded="true" signature="1254:1508" ph="{...}" />
+            <marker date="1555295693671" expanded="true" signature="1301:1378" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.API/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.API/GildedRose.API.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/680D0A75-2A4E-40EB-A596-BAD88FBFB729/f8/64b01fcb/Object.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.API/Middlewares/GlobalErrorHandling/Extenstions/ExceptionMiddlewareExtensions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="4" column="65" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
+          <folding>
+            <marker date="1555295954083" expanded="false" signature="6:108" ph="..." />
+            <marker date="1555295954083" expanded="true" signature="178:1158" ph="{...}" />
+            <marker date="1555295954083" expanded="true" signature="234:1156" ph="{...}" />
+            <marker date="1555295954083" expanded="true" signature="323:1150" ph="{...}" />
+            <marker date="1555295954083" expanded="true" signature="389:1138" ph="{...}" />
+            <marker date="1555295954083" expanded="true" signature="449:1122" ph="{...}" />
+            <marker date="1555295954083" expanded="true" signature="766:1104" ph="{...}" />
+            <marker date="1555295954083" expanded="true" signature="888:1069" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.API/Middlewares/GlobalErrorHandling/Extenstions/ExceptionStatusCodeMapper.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding>
+            <marker date="1555295650722" expanded="false" signature="6:31" ph="..." />
+            <marker date="1555295650722" expanded="true" signature="90:844" ph="{...}" />
+            <marker date="1555295650722" expanded="true" signature="142:842" ph="{...}" />
+            <marker date="1555295650722" expanded="true" signature="208:836" ph="{...}" />
+            <marker date="1555295650722" expanded="true" signature="242:826" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.API/Helper/Attributes/ValidateModelAttribute.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="68" lean-forward="true" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.API/Helper/Exceptions/BadRequestException.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <marker date="1555295676102" expanded="true" signature="39:385" ph="{...}" />
+            <marker date="1555295676102" expanded="true" signature="90:383" ph="{...}" />
+            <marker date="1555295676102" expanded="true" signature="133:153" ph="{...}" />
+            <marker date="1555295676102" expanded="true" signature="233:253" ph="{...}" />
+            <marker date="1555295676102" expanded="true" signature="357:377" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.API/Helper/Exceptions/NotFoundException.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+          <folding>
+            <marker date="1555295699505" expanded="true" signature="39:377" ph="{...}" />
+            <marker date="1555295699505" expanded="true" signature="88:375" ph="{...}" />
+            <marker date="1555295699505" expanded="true" signature="129:149" ph="{...}" />
+            <marker date="1555295699505" expanded="true" signature="227:247" ph="{...}" />
+            <marker date="1555295699505" expanded="true" signature="349:369" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.API/Helper/Exceptions/OutOfStockException.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+          <folding>
+            <marker date="1555295707233" expanded="true" signature="39:447" ph="{...}" />
+            <marker date="1555295707233" expanded="true" signature="90:445" ph="{...}" />
+            <marker date="1555295707233" expanded="true" signature="195:215" ph="{...}" />
+            <marker date="1555295707233" expanded="true" signature="295:315" ph="{...}" />
+            <marker date="1555295707233" expanded="true" signature="419:439" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.API/Helper/DataGenerator.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+          <folding>
+            <marker date="1555295728172" expanded="true" signature="6:140" ph="..." />
+            <marker date="1555295728172" expanded="true" signature="173:1664" ph="{...}" />
+            <marker date="1555295728172" expanded="true" signature="206:1662" ph="{...}" />
+            <marker date="1555295728172" expanded="true" signature="284:1656" ph="{...}" />
+            <marker date="1555295728172" expanded="true" signature="431:1646" ph="{...}" />
+            <marker date="1555295728172" expanded="true" signature="489:582" ph="{...}" />
+            <marker date="1555295728172" expanded="true" signature="691:925" ph="{...}" />
+            <marker date="1555295728172" expanded="true" signature="993:1243" ph="{...}" />
+            <marker date="1555295728172" expanded="true" signature="1313:1570" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.API/Middlewares/GlobalErrorHandling/ErrorDetails.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <marker date="1555295728160" expanded="true" signature="80:332" ph="{...}" />
+            <marker date="1555295728160" expanded="true" signature="112:330" ph="{...}" />
+            <marker date="1555295728160" expanded="true" signature="250:324" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.API/Services/Contracts/IProductService.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <marker date="1555295468920" expanded="true" signature="6:115" ph="..." />
+            <marker date="1555295468920" expanded="true" signature="160:441" ph="{...}" />
+            <marker date="1555295468920" expanded="true" signature="199:439" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.API/Services/Implementation/ProductService.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+          <folding>
+            <marker date="1555295954088" expanded="true" signature="6:313" ph="..." />
+            <marker date="1555295954088" expanded="true" signature="363:3174" ph="{...}" />
+            <marker date="1555295954088" expanded="true" signature="415:3172" ph="{...}" />
+            <marker date="1555295954088" expanded="true" signature="710:1547" ph="{...}" />
+            <marker date="1555295954088" expanded="true" signature="1655:2727" ph="{...}" />
+            <marker date="1555295954088" expanded="true" signature="1909:2002" ph="{...}" />
+            <marker date="1555295954088" expanded="true" signature="2063:2148" ph="{...}" />
+            <marker date="1555295954088" expanded="true" signature="2288:2715" ph="{...}" />
+            <marker date="1555295954088" expanded="true" signature="2440:2701" ph="{...}" />
+            <marker date="1555295954088" expanded="true" signature="2879:3165" ph="{...}" />
+            <marker date="1555295954088" expanded="true" signature="2966:3127" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.API/Controllers/StoreController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="37" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+          <folding>
+            <marker date="1555295728139" expanded="true" signature="6:270" ph="..." />
+            <marker date="1555295728139" expanded="true" signature="304:1362" ph="{...}" />
+            <marker date="1555295728139" expanded="true" signature="454:1360" ph="{...}" />
+            <marker date="1555295728139" expanded="true" signature="582:651" ph="{...}" />
+            <marker date="1555295728139" expanded="true" signature="845:1002" ph="{...}" />
+            <marker date="1555295728139" expanded="true" signature="1253:1353" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.API/Controllers/AuthController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+          <folding>
+            <marker date="1555295728180" expanded="true" signature="6:196" ph="..." />
+            <marker date="1555295728180" expanded="true" signature="230:2409" ph="{...}" />
+            <marker date="1555295728180" expanded="true" signature="413:2407" ph="{...}" />
+            <marker date="1555295728180" expanded="true" signature="554:2400" ph="{...}" />
+            <marker date="1555295728180" expanded="true" signature="724:1061" ph="/* Validate the user credentials. ... */" />
+            <marker date="1555295728180" expanded="true" signature="1151:1257" ph="{...}" />
+            <marker date="1555295728180" expanded="true" signature="1555:1777" ph="/* Add a &quot;sub&quot; claim containing the user identifier, and attach ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.API/Configurations/AuthenticationConfiguration.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <marker date="1555295915467" expanded="true" signature="6:89" ph="..." />
+            <marker date="1555295915467" expanded="true" signature="182:1839" ph="{...}" />
+            <marker date="1555295915467" expanded="true" signature="236:1837" ph="{...}" />
+            <marker date="1555295915467" expanded="true" signature="358:1830" ph="{...}" />
+            <marker date="1555295915467" expanded="true" signature="492:701" ph="{...}" />
+            <marker date="1555295915467" expanded="true" signature="791:1293" ph="{...}" />
+            <marker date="1555295915467" expanded="true" signature="1307:1602" ph="/* Register the OpenIddict validation handler. ... */" />
+            <marker date="1555295915467" expanded="true" signature="1686:1817" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.API/Configurations/ServiceConfiguration.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="47" selection-start-column="47" selection-end-column="47" />
+          <folding>
+            <marker date="1555295728149" expanded="true" signature="6:134" ph="..." />
+            <marker date="1555295728149" expanded="true" signature="175:430" ph="{...}" />
+            <marker date="1555295728149" expanded="true" signature="222:428" ph="{...}" />
+            <marker date="1555295728149" expanded="true" signature="307:421" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.API/ViewModels/AuthVM.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+          <folding>
+            <marker date="1555295693667" expanded="true" signature="31:165" ph="{...}" />
+            <marker date="1555295693667" expanded="true" signature="57:163" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.API/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <marker date="1555296022159" expanded="false" signature="6:163" ph="..." />
+            <marker date="1555296022159" expanded="true" signature="185:1112" ph="{...}" />
+            <marker date="1555296022159" expanded="true" signature="212:1110" ph="{...}" />
+            <marker date="1555296022159" expanded="true" signature="265:860" ph="{...}" />
+            <marker date="1555296022159" expanded="true" signature="477:825" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.Data/ApplicationContext.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <marker date="1555294728744" expanded="false" signature="6:66" ph="..." />
+            <marker date="1555294728744" expanded="true" signature="93:353" ph="{...}" />
+            <marker date="1555294728744" expanded="true" signature="145:351" ph="{...}" />
+            <marker date="1555294728744" expanded="true" signature="263:283" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.Data/Models/Product.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
+          <folding>
+            <marker date="1555295693675" expanded="true" signature="32:289" ph="{...}" />
+            <marker date="1555295693675" expanded="true" signature="59:287" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.Tests/UnitTests/StoreControllerTest.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170">
+          <caret line="36" column="50" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
+          <folding>
+            <marker date="1555296006919" expanded="false" signature="6:282" ph="..." />
+            <marker date="1555296006919" expanded="true" signature="320:3417" ph="{...}" />
+            <marker date="1555296006919" expanded="true" signature="359:3415" ph="{...}" />
+            <marker date="1555296006919" expanded="true" signature="512:659" ph="{...}" />
+            <marker date="1555296006919" expanded="true" signature="723:2365" ph="{...}" />
+            <marker date="1555296006919" expanded="true" signature="993:1491" ph="{...}" />
+            <marker date="1555296006919" expanded="true" signature="1107:1473" ph="{...}" />
+            <marker date="1555296006919" expanded="true" signature="1572:2022" ph="{...}" />
+            <marker date="1555296006919" expanded="true" signature="1672:2008" ph="{...}" />
+            <marker date="1555296006919" expanded="true" signature="2083:2196" ph="{...}" />
+            <marker date="1555296006919" expanded="true" signature="2423:3409" ph="{...}" />
+            <marker date="1555296006919" expanded="true" signature="2703:2963" ph="{...}" />
+            <marker date="1555296006919" expanded="true" signature="2848:2945" ph="{...}" />
+            <marker date="1555296006919" expanded="true" signature="3019:3249" ph="{...}" />
+            <marker date="1555296006919" expanded="true" signature="3148:3235" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/SeedData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding>
+            <marker date="1555296006899" expanded="false" signature="6:52" ph="..." />
+            <marker date="1555296006899" expanded="true" signature="101:692" ph="{...}" />
+            <marker date="1555296006899" expanded="true" signature="136:690" ph="{...}" />
+            <marker date="1555296006899" expanded="true" signature="218:684" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/ServiceTests/ProductServiceTest.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="175" column="60" selection-start-line="175" selection-start-column="60" selection-end-line="175" selection-end-column="60" />
+          <folding>
+            <marker date="1555296006908" expanded="false" signature="6:417" ph="..." />
+            <marker date="1555296006908" expanded="true" signature="479:5798" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="518:5794" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="691:1263" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="1325:2036" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="1399:1847" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="1499:1833" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="2240:2477" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="2340:2463" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="2763:3311" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="2879:3116" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="2979:3102" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="3403:3861" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="3513:3612" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="3918:4682" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="4074:4151" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="4205:4446" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="4263:4432" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="4757:5213" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="4820:4947" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="4965:5082" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="5114:5202" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="5287:5787" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="5352:5431" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="5449:5659" ph="{...}" />
+            <marker date="1555296006908" expanded="true" signature="5691:5777" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GildedRose.Tests/Api.IntegrationTests/Api.Mocked/ProductsControllerIntegrationTests.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding>
+            <marker date="1555296605359" expanded="true" signature="6:253" ph="..." />
+            <marker date="1555296605359" expanded="true" signature="314:7938" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="422:7936" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="658:764" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="827:1897" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="901:1343" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="995:1329" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="1522:1739" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="1972:2965" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="2106:2343" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="2206:2329" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="2590:2807" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="3051:4010" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="3167:3404" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="3267:3390" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="3635:3852" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="4103:4927" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="4222:4321" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="4552:4769" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="4985:6147" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="5045:5121" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="5175:5417" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="5233:5403" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="5777:5934" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="6216:6828" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="6325:6400" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="6541:6697" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="6729:6818" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="6889:7928" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="6979:7209" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="7356:7517" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="7534:7822" ph="{...}" />
+            <marker date="1555296605359" expanded="true" signature="7852:7918" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

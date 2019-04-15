@@ -1,19 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using GildedRose.API.Services.Contracts;
-using GildedRose.API.Services.Implementation;
-using Microsoft.AspNetCore.Identity;
-using GildedRose.Data.Models;
-using GildedRose.API.AuthenticationProvider;
-using System.IdentityModel.Tokens.Jwt;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using System.Text;
 using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Hosting;
+using GildedRose.Data;
+using OpenIddict.Validation;
 
 namespace GildedRose.API.Configurations
 {
@@ -23,35 +11,37 @@ namespace GildedRose.API.Configurations
         public static void ConfigureAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
 
-            // This will not require in case of third party authentication
-            services.AddTransient<IUserStore<ApplicationUser>, UserStore>();
-            services.AddTransient<IRoleStore<ApplicationRole>, RoleStore>();
-
-            services.AddIdentity<ApplicationUser, ApplicationRole>()
-                .AddDefaultTokenProviders();
-
-            // ===== Add Jwt Authentication ======== 
-            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
-            services
-                .AddAuthentication(options =>
+            services.AddOpenIddict()
+            // Register the OpenIddict core services.
+            .AddCore(options =>
+            {
+                // Configure OpenIddict to use the EF Core stores/models.
+                options.UseEntityFrameworkCore()
+                   .UseDbContext<ApplicationDbContext>();
+            })
+            // Register the OpenIddict server handler.
+            .AddServer(options =>
+            {
+                options.UseMvc();
+                // Enable the token endpoint.
+                options.EnableTokenEndpoint("/api/v1/auth/connect/token");
+                // Enable the password flow.
+                options.AllowPasswordFlow();
+                // Accept anonymous clients (i.e clients that don't send a client_id).
+                options.AcceptAnonymousClients();
+                // only for demo purpose
+                options.DisableHttpsRequirement();
+            })
+            // Register the OpenIddict validation handler.
+            // Note: the OpenIddict validation handler is only compatible with the
+            // default token format or with reference tokens and cannot be used with
+            // JWT tokens. For JWT tokens, use the Microsoft JWT bearer handler.
+            .AddValidation();
+                services.AddAuthentication(options =>
                 {
-                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                })
-                .AddJwtBearer(cfg =>
-                {
-
-                    cfg.RequireHttpsMetadata = false;
-                    cfg.SaveToken = true;
-                    cfg.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidIssuer = configuration["JwtIssuer"],
-                        ValidAudience = configuration["JwtIssuer"],
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JwtKey"])),
-                        ClockSkew = TimeSpan.Zero
-                    };
+                    options.DefaultScheme = OpenIddictValidationDefaults.AuthenticationScheme;
                 });
+
         }
 
     }

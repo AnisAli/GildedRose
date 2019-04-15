@@ -9,28 +9,20 @@ namespace GildedRose.API.Middlewares.GlobalErrorHandling
 
         public static int GetStatusCode(this Exception ex)
         {
-
-            if (ex is UnauthorizedAccessException)
+            switch (ex)
             {
-                return (int)HttpStatusCode.Unauthorized;
+                case UnauthorizedAccessException _:
+                    return (int)HttpStatusCode.Unauthorized;
+                case InvalidOperationException _:
+                case BadRequestException _:
+                    return (int)HttpStatusCode.BadRequest;
+                case OutOfStockException _:
+                    return (int) HttpStatusCode.Gone;
+                case NotFoundException _:
+                    return (int)HttpStatusCode.NotFound;
+                default:
+                    return (int)HttpStatusCode.InternalServerError;
             }
-            else if (ex is InvalidOperationException || ex is BadRequestException)
-            {
-                return (int)HttpStatusCode.BadRequest;
-            }
-            else if (ex is OutOfStockException)
-            {
-                return (int) HttpStatusCode.Gone;
-            }
-            else if (ex is NotFoundException)
-            {
-                return (int)HttpStatusCode.NotFound;
-            }
-            else
-            {
-                return (int)HttpStatusCode.InternalServerError;
-            }
-
         }
     }
 }

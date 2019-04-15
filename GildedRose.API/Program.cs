@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore;
+﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using GildedRose.API.Helper;
 using GildedRose.Data;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,7 +18,7 @@ namespace GildedRose
             {
                 //Get the instance of ApplicationDbContext in the services layer
                 var services = scope.ServiceProvider;
-                var context = services.GetRequiredService<ApplicationDbContext>();
+                services.GetRequiredService<ApplicationDbContext>();
 
                 //Call the DataGenerator to create sample data
                 DataGenerator.Initialize(services);
@@ -38,6 +31,6 @@ namespace GildedRose
             WebHost.CreateDefaultBuilder(args)
                 .UseKestrel()
                 .UseStartup<Startup>()
-                .UseUrls("http://localhost:5000/");
+                .UseUrls("http://0.0.0.0:5000/");
     }
 }

@@ -19,7 +19,7 @@ namespace GildedRose.API.Middlewares.GlobalErrorHandling.Extenstions
 
                     if (contextFeature != null)
                     {
-                        await context.Response.WriteAsync(new ErrorDetails()
+                        await context.Response.WriteAsync(new ErrorDetails
                         {
                             ErrorCode = contextFeature.Error.GetStatusCode(),
                             Message = contextFeature.Error.Message.Trim(), 

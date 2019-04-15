@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Dev\GildedRose" t="IncludeFlat">
+      <e p="GildedRose.API" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="Bin" t="ExcludeRecursive" />
+        <e p="Configurations" t="Include">
+          <e p="AuthenticationConfiguration.cs" t="Include" />
+          <e p="ServiceConfiguration.cs" t="Include" />
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="AuthController.cs" t="Include" />
+          <e p="StoreController.cs" t="Include" />
+        </e>
+        <e p="GildedRose.API.csproj" t="IncludeRecursive" />
+        <e p="Helper" t="Include">
+          <e p="DataGenerator.cs" t="Include" />
+          <e p="Exceptions" t="Include">
+            <e p="BadRequestException.cs" t="Include" />
+            <e p="NotFoundException.cs" t="Include" />
+            <e p="OutOfStockException.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Middlewares" t="Include">
+          <e p="GlobalErrorHandling" t="Include">
+            <e p="ErrorDetails.cs" t="Include" />
+            <e p="Extenstions" t="Include">
+              <e p="ExceptionMiddlewareExtensions.cs" t="Include" />
+              <e p="ExceptionStatusCodeMapper.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="GildedRose.API.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+          <e p="PublishProfiles" t="Include">
+            <e p="FolderProfile.pubxml" t="Include" />
+          </e>
+        </e>
+        <e p="Services" t="Include">
+          <e p="Contracts" t="Include">
+            <e p="IProductService.cs" t="Include" />
+          </e>
+          <e p="Implementation" t="Include">
+            <e p="ProductService.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="ViewModels" t="Include">
+          <e p="AuthVM.cs" t="Include" />
+          <e p="OrderItem.cs" t="Include" />
+          <e p="OrderVM.cs" t="Include" />
+          <e p="ProductsListVM.cs" t="Include" />
+          <e p="ProductVM.cs" t="Include" />
+          <e p="QueryParams.cs" t="Include" />
+        </e>
+      </e>
+      <e p="GildedRose.Data" t="IncludeRecursive">
+        <e p="ApplicationContext.cs" t="Include" />
+        <e p="Bin" t="ExcludeRecursive" />
+        <e p="GildedRose.Data.csproj" t="IncludeRecursive" />
+        <e p="Models" t="Include">
+          <e p="Product.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="GildedRose.Data.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="GildedRose.sln" t="IncludeFlat" />
+      <e p="GildedRose.Tests" t="IncludeRecursive">
+        <e p="Api.IntegrationTests" t="Include">
+          <e p="Api.Mocked" t="Include">
+            <e p="CustomWebApplicationFactory.cs" t="Include" />
+            <e p="ProductsControllerIntegrationTests.cs" t="Include" />
+          </e>
+          <e p="SeedData.cs" t="Include" />
+          <e p="ServiceTests" t="Include">
+            <e p="ProductServiceTest.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Bin" t="ExcludeRecursive" />
+        <e p="GildedRose.Tests.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="GildedRose.Tests.AssemblyInfo.cs" t="Include" />
+              <e p="GildedRose.Tests.Program.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="UnitTests" t="Include">
+          <e p="StoreControllerTest.cs" t="Include" />
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+    <e p="C:\Users\Anis\.nuget\packages\xunit.runner.visualstudio\2.3.1\build\netcoreapp1.0\xunit.runner.reporters.netcoreapp10.dll" t="Include" />
+    <e p="C:\Users\Anis\.nuget\packages\xunit.runner.visualstudio\2.3.1\build\netcoreapp1.0\xunit.runner.utility.netcoreapp10.dll" t="Include" />
+    <e p="C:\Users\Anis\.nuget\packages\xunit.runner.visualstudio\2.3.1\build\netcoreapp1.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll" t="Include" />
+    <e p="C:\Users\Anis\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Anis\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_GildedRose.-885948726.00" t="ExcludeRecursive" />
+  </component>
+</project>

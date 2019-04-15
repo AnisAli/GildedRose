@@ -1,5 +1,4 @@
 ﻿using GildedRose.Data;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +8,6 @@ using GildedRose.API.Services.Contracts;
 using GildedRose.API.Services.Implementation;
 
 using System;
-using System.Net.Http;
 
 namespace GildedRose.Tests.Api.IntegrationTests
 {
@@ -37,8 +35,7 @@ namespace GildedRose.Tests.Api.IntegrationTests
                 services.AddScoped<IProductService, ProductService>();
 
                 var sp = services.BuildServiceProvider();
-               
-        
+
                 using (var scope = sp.CreateScope())
                 {
                     var scopedServices = scope.ServiceProvider;

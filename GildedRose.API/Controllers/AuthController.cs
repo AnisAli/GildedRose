@@ -1,20 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using GildedRose.ViewModels;
+﻿using AspNet.Security.OpenIdConnect.Extensions;
+using AspNet.Security.OpenIdConnect.Primitives;
 using Microsoft.AspNetCore.Mvc;
-using GildedRose.API.Services.Contracts;
-using GildedRose.API.Helper.Attributes;
-using Microsoft.AspNetCore.Identity;
-using GildedRose.Data.Models;
-using Microsoft.AspNetCore.Authorization;
+using OpenIddict.Server;
+using System;
 using System.Security.Claims;
-using System.IdentityModel.Tokens.Jwt;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.Extensions.Configuration;
-using System.Text;
 
 namespace GildedRose.Controllers
 {
@@ -22,55 +11,42 @@ namespace GildedRose.Controllers
     [Route("api/v{version:apiVersion}/[controller]")]
     //[Route("api/[controller]")]
     [ApiController]
-
-
     public class AuthController : ControllerBase
     {
-        private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly IConfiguration _configuration;
 
-        public AuthController(IConfiguration configuration, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        [HttpPost("connect/token"), Produces("application/json")]
+        public IActionResult Exchange(OpenIdConnectRequest request)
         {
-                this._userManager = userManager;
-                this._signInManager = signInManager;
-                this._configuration = configuration;
-        }
-
-
-        [HttpGet]
-        public async Task<object> Login()
-        {
-
-            return  await GenerateJwtToken("test@test.com", new ApplicationUser() { Id = 111 });
-           // throw new ApplicationException("INVALID_LOGIN_ATTEMPT");
-        }
-
-
-        private async Task<object> GenerateJwtToken(string email, ApplicationUser user)
-        {
-            var claims = new List<Claim>
+            if (!request.IsPasswordGrantType())
+                throw new InvalidOperationException("The specified grant type is not supported.");
+            // Validate the user credentials.
+            // Note: to mitigate brute force attacks, you SHOULD strongly consider
+            // applying a key derivation function like PBKDF2 to slow down
+            // the password validation process. You SHOULD also consider
+            // using a time-constant comparer to prevent timing attacks.
+            if (request.Username != "test" ||
+                request.Password != "test")
             {
-                new Claim(JwtRegisteredClaimNames.Sub, email),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
-            };
-
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtKey"]));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            var expires = DateTime.Now.AddDays(Convert.ToDouble(_configuration["JwtExpireDays"]));
-
-            var token = new JwtSecurityToken(
-                _configuration["JwtIssuer"],
-                _configuration["JwtIssuer"],
-                claims,
-                expires: expires,
-                signingCredentials: creds
-            );
-
-            return new JwtSecurityTokenHandler().WriteToken(token);
+                return Forbid(OpenIddictServerDefaults.AuthenticationScheme);
+            }
+            // Create a new ClaimsIdentity holding the user identity.
+            var identity = new ClaimsIdentity(
+                OpenIddictServerDefaults.AuthenticationScheme,
+                OpenIdConnectConstants.Claims.Name,
+                OpenIdConnectConstants.Claims.Role);
+            // Add a "sub" claim containing the user identifier, and attach
+            // the "access_token" destination to allow OpenIddict to store it
+            // in the access token, so it can be retrieved from the controllers.
+            identity.AddClaim(OpenIdConnectConstants.Claims.Subject,
+                "71346D62-9BA5-4B6D-9ECA-755574D628D8",
+                OpenIdConnectConstants.Destinations.AccessToken);
+            identity.AddClaim(OpenIdConnectConstants.Claims.Name, "Test",
+                OpenIdConnectConstants.Destinations.AccessToken);
+            // add other claims, if necessary.
+            var principal = new ClaimsPrincipal(identity);
+            // Ask OpenIddict to generate a new token and return an OAuth2 token response.
+            return SignIn(principal, OpenIddictServerDefaults.AuthenticationScheme);
         }
-     
 
     }
 }
