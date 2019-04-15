@@ -3,9 +3,9 @@
 # Assumptions
 GildedRose is providing the APIs to the merchants, and merchants are actually the users for GildedRose, not the actual customer who are buying the products from Gilded Rose Inventory via merchant provided interface.
 
-**API**: GildedRose's REST API, which the merchant can use to read product list and checkout.
-**User**: A GildedRose account holder, usually a merchant.
-**Checkout**: For demo purpose, Checkout API allow to buy only one product at a time with custom quantity.
+* **API**: GildedRose's REST API, which the merchant can use to read product list and checkout.
+* **User**: A GildedRose account holder, usually a merchant.
+* **Checkout**: For demo purpose, Checkout API allow to buy only one product at a time with custom quantity.
 
 # Running using Docker 
 Docker image found on https://hub.docker.com/r/anisnoorali/gildedrose-api
